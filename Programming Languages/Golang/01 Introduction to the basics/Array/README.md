@@ -150,7 +150,7 @@ fmt.Printf("a = %v\n", a)                  // a = [1 2 3]
 fmt.Printf("b = %v\n", b)                  // b = [1 2 3]
 fmt.Printf("Скопировано %d элемента\n", n) // Скопировано 3 элемента
 ```
-#### Задачи
+##### Задача 1
 
 ```Go
 /*
@@ -184,4 +184,44 @@ for i := 0; i < 3; i++ {
 for _, elem := range workArray {
     fmt.Print(elem, " ")
 }
+```
+
+##### Задача 2
+```GO
+/*
+Напишите программу, принимающая на вход число N (N \geq 4)N(N≥4), а затем NN целых чисел-элементов среза. На вывод нужно подать 4-ый (3 по индексу) элемент данного среза.
+
+Sample Input:
+
+5
+41 -231 24 49 6
+Sample Output:
+
+49
+*/
+    var sl, in, res int
+    fmt.Scan(&sl)
+    sr := make([]int, sl)
+    for i := 0; i < sl; i++ {
+        fmt.Scan(&in)
+        sr = append(sr, in)
+    }
+    sr = append(sr[:0], sr[sl:]...)
+
+    for _, elem := range sr[3:4] {
+        res = elem
+    }
+    fmt.Print(res)
+```
+
+##### Задача 3
+```GO
+```
+
+##### Задача 4
+```GO
+```
+
+##### Задача 5
+```GO
 ```
