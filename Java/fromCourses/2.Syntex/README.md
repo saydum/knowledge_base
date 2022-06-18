@@ -115,5 +115,39 @@ for (int i: myArray) {
 
 
 # ООП
+- Класс - это шаблон с характеристиками
+- Объект - структура данных, содержашийся описание свойст внешнего объекта.
 
-Класс - это шаблон с характеристиками
+## Констрктор
+```java
+class Box {
+    // Констрктор
+    public Box() {
+        //...
+    }
+}
+```
+## [Перегрузка методов](https://metanit.com/java/tutorial/2.18.php)
+Это когда мы можем использовать методы с одним и тем же именем, но с разными типами и/или кол-вом параметров.
+```java
+class Box {
+    public static void main(String[] args) {
+        System.out.println(sum(2, 3));          // 5
+        System.out.println(sum(4.5, 3.2));      // 7.7
+        System.out.println(sum(4, 3, 7));       // 14
+    }
+
+    static int sum(int x, int y){         
+        return x + y;
+    }
+
+    static double sum(double x, double y){
+             
+        return x + y;
+    }
+
+    static int sum(int x, int y, int z){         
+        return x + y + z;
+    }
+}
+```
