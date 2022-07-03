@@ -7,3 +7,5 @@
 - Не реляционные
 - SQL
 - NoSQL
+
+sudo netstat -nlp | grep 3306

@@ -1,12 +1,24 @@
 version: "3"
 services:
-  postgres:
-    image: postgres:14.3
-    environment:
-      POSTGRES_DB: "app_db"
-      POSTGRES_USER: "root"
-      POSTGRES_PASSWORD: "root"
-    volumes:
-      - .:/docker-entrypoint-initdb.d
+  pgsql:
+    restart: always
+    image: sameersbn/postgresql:12-20200524
     ports:
       - "5432:5432"
+    environment:
+      - DEBUG=false
+
+      - DB_USER=root
+      - DB_PASS=secret
+      - DB_NAME=app_db
+      - DB_TEMPLATE=
+
+      - DB_EXTENSION=
+
+      - REPLICATION_MODE=
+      - REPLICATION_USER=
+      - REPLICATION_PASS=
+      - REPLICATION_SSLMODE=
+    command: "--wal_keep_segments=32 --logging_collector=off"
+    volumes:
+      - postgresql:/var/lib/postgresql
